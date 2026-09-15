@@ -1,0 +1,296 @@
+---
+import { Image } from "astro:assets";
+const sectionStyles = `landing-section bg-purple w-screen text-center relative`;
+
+//import heroLogo from "../assets/hero-logo-n.png";
+//import heroLogoMobile from "../assets/hero-logo-mobile-n.webp";
+//import heroWoman from "../assets/hero-woman.png";
+
+
+---
+
+<section class={`${sectionStyles} pb-0`} data-header-color="purple" id="inicio">
+  <!-- Desktop Layout -->
+  <div
+    class="hidden lg:flex justify-start items-center min-h-[82vh] xl:min-h-[85vh] px-8 xl:px-16 pt-24 xl:pt-32 pb-12 z-30 relative gap-6 xl:gap-12"
+  >
+    <!-- Left content -->
+    <div class="flex flex-col w-[42vw] xl:w-[45vw] max-w-[42vw] xl:max-w-[45vw] items-start z-40 space-y-4 xl:space-y-6">
+  
+      <h2 class="text-apple text-3xl lg:text-4xl xl:text-5xl font-bold uppercase">FORO 2026</h2>
+
+      <Image
+        src={heroLogo}
+        alt="Logo plenilunia en mi menopausia"
+        class="hidden md:block w-full h-auto object-contain"
+        loading="eager"
+        fetchpriority="high"
+        widths={[500, 700, 900]}
+        sizes="(max-width: 1280px) 42vw, 45vw"
+        format="webp"
+      /> 
+      
+
+      <!-- Texto y botón alineados -->
+      <div class="flex items-start gap-4 pt-2 xl:pt-4">
+        <div class="space-y-2 xl:space-y-3 flex flex-col items-start">
+          <p class="text-xl lg:text-2xl xl:text-3xl font-bold text-apple">DOMINGO 18 OCTUBRE 2026</p>
+          <p class="text-white text-lg xl:text-2xl">Día Mundial de la Menopausia</p>
+          <p class="font-bold text-apple text-lg xl:text-2xl text-left">
+            Sede: <span class="font-bold text-white">Unidad de Congresos del Centro Médico Nacional Siglo XXI.</span>
+          </p>
+        </div>
+      </div>
+
+        <!-- Boton comprar entrada -->
+      <div class="flex w-full mb-6 md:mb-0">
+        <a 
+        href="https://lu.ma/event/evt-4j8OFjP25kLPvzX" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="luma-checkout--button" 
+        data-luma-action="checkout" 
+        data-luma-event-id="evt-4j8OFjP25kLPvzX"
+        style="
+        background: #FFFFFF; 
+        color: #7758AC; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        width: 250px; 
+        height: 46px;
+        border-radius: 32px; 
+        text-transform: uppercase; 
+        text-decoration: none; 
+        font-weight: 900; 
+        font-size: 18px; 
+        letter-spacing: 0.05em; 
+        text-align: center; 
+        white-space: nowrap;
+        transition: transform 0.2s ease;
+      "
+        onmouseover="
+        this.style.background='#B7D280'; 
+        this.style.fontWeight='900'; 
+        this.style.transform='scale(1.03)';
+    "
+        onmouseout="
+        this.style.background='#FFFFFF'; 
+        this.style.fontWeight='900'; 
+        this.style.transform='scale(1)';
+    "
+>
+    COMPRA TU BOLETO
+    </a>
+    
+    </div>
+
+<!-- Fin Boton comprar entrada -->
+ 
+</div>
+
+    <!-- Right image -->
+
+<!-- Hero Woman + Player: Transicion -->
+    <div class="absolute bottom-0 right-0 w-[38vw] max-w-[550px] h-full flex items-center justify-center z-10">
+    <div 
+        id="hero-layer-woman" 
+        class="absolute bottom-0 right-0 w-full h-full flex items-end justify-end transition-all duration-1000 ease-in-out opacity-100 scale-100"
+      >
+
+      <Image
+        src={heroWoman}
+        alt="Mujer feliz"
+        class="w-auto h-[85%] object-contain object-bottom select-none pointer-events-none"
+        loading="eager"
+        fetchpriority="high"
+        format="webp"
+      />
+    </div>
+    <div 
+        id="hero-layer-video" 
+        class="absolute inset-0 flex items-center justify-center transition-all duration-1000 ease-in-out opacity-0 scale-95 pointer-events-none z-20 px-8"
+      >
+        <div class="absolute inset-0 bg-purple/40 backdrop-blur-sm lg:rounded-l-3xl"></div>
+        
+        <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-black/40 relative z-30">
+          <iframe 
+            id="youtube-player"
+            class="w-full h-full" 
+            src="https://www.youtube.com/embed/cQ3hmi1Y5Kw?si=h8rEjl8sdxOmDV0z&enablejsapi=1&start=565" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Layout -->
+<div
+    class="lg:hidden flex flex-col items-center text-center px-6 pt-28 pb-16 z-30 relative h-full space-y-6"
+  ></br>
+    <h2 class="text-apple text-2xl font-bold uppercase">FORO 2026</h2>
+    <Image
+      src={heroLogoMobile}
+      alt="Logo plenilunia en mi menopausia"
+      class="w-[220px] block md:hidden"
+      loading="eager"
+      fetchpriority="high"
+      width={220}
+      format="webp"
+      quality={80}
+    />
+
+  <div class="w-full max-w-md aspect-video rounded-xl overflow-hidden shadow-xl border border-white/10 my-2">
+      <iframe 
+        class="w-full h-full" 
+        src="https://www.youtube.com/embed/cQ3hmi1Y5Kw?si=h8rEjl8sdxOmDV0z&start=565" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+      ></iframe>
+  </div>
+
+    <div class="space-y-2 flex flex-col items-center mt-4">
+      <p class="text-2xl md:text-3xl font-bold text-apple">DOMINGO 18 OCTUBRE 2026</p>
+      <p class="text-white text-xl">Día Mundial de la Menopausia</p>
+      <p class="font-bold text-apple text-xl">
+        Sede: <span class="font-bold text-white block mt-1">Unidad de Congresos del Centro Médico Nacional Siglo XXI.</span>
+      </p>
+        </div>
+
+ <!--Boton comprar entrada-->
+<div class="space-y-2 flex flex-col items-justify-center mb-6">
+        <a 
+        href="https://lu.ma/event/evt-4j8OFjP25kLPvzX" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="luma-checkout--button" 
+        data-luma-action="checkout" 
+        data-luma-event-id="evt-4j8OFjP25kLPvzX"
+        style="
+        background: #FFFFFF; 
+        color: #7758AC; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        width: 250px; 
+        height: 46px;
+        border-radius: 32px; 
+        text-transform: uppercase; 
+        text-decoration: none; 
+        font-weight: 900; 
+        font-size: 18px; 
+        letter-spacing: 0.05em; 
+        text-align: center; 
+        white-space: nowrap;
+        transition: transform 0.2s ease;
+      "
+        onmouseover="
+        this.style.background='#B7D280'; 
+        this.style.fontWeight='900'; 
+        this.style.transform='scale(1.03)';
+    "
+        onmouseout="
+        this.style.background='#FFFFFF'; 
+        this.style.fontWeight='900'; 
+        this.style.transform='scale(1)';
+    "
+>
+    COMPRA TU BOLETO
+    </a>
+    
+    </div>
+
+<!-- Fin Boton comprar entrada -->
+
+  <!-- Fin Mobile Layout -->
+
+
+  </div>
+</section>
+<script>
+  let transitionInterval;
+  let isWomanVisible = true;
+  let switchCount = 0;
+  
+  const MAX_SWITCHES = 10; // 5 vueltas completas (Ida y vuelta)
+  const TRANSITION_TIME = 4000; // 4 segundos por elemento
+
+  const layerWoman = document.getElementById("hero-layer-woman");
+  const layerVideo = document.getElementById("hero-layer-video");
+
+  // 1. Iniciar la transición normal apenas cargue la página
+  function startLayoutTransition() {
+    if (!layerWoman || !layerVideo) return;
+
+    transitionInterval = setInterval(() => {
+      if (isWomanVisible) {
+        // Mostrar Video
+        layerWoman.classList.remove("opacity-100", "scale-100");
+        layerWoman.classList.add("opacity-0", "scale-95", "pointer-events-none");
+
+        layerVideo.classList.remove("opacity-0", "scale-95", "pointer-events-none");
+        layerVideo.classList.add("opacity-100", "scale-100");
+      } else {
+        // Mostrar Chica
+        layerVideo.classList.remove("opacity-100", "scale-100");
+        layerVideo.classList.add("opacity-0", "scale-95", "pointer-events-none");
+
+        layerWoman.classList.remove("opacity-0", "scale-95", "pointer-events-none");
+        layerWoman.classList.add("opacity-100", "scale-100");
+      }
+
+      isWomanVisible = !isWomanVisible;
+      switchCount++;
+
+      if (switchCount >= MAX_SWITCHES) {
+        clearInterval(transitionInterval);
+      }
+    }, TRANSITION_TIME);
+  }
+
+  // 2. Cargar la API de YouTube en segundo plano
+  const tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  const firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // 3. Escuchar los eventos del reproductor de YouTube
+  // Forzamos el tipado en window para que Astro no lo aísle del contexto global
+  (window as any).onYouTubeIframeAPIReady = () => {
+    new (window as any).YT.Player('youtube-player', {
+      events: {
+        'onStateChange': (event: any) => {
+          // El estado '1' significa YT.PlayerState.PLAYING (El usuario le dio Play)
+          if (event.data === 1) {
+            // Detener el cronómetro para siempre
+            clearInterval(transitionInterval);
+            
+            // Forzar que el video se quede visible y la chica oculta inmediatamente
+            layerWoman?.classList.remove("opacity-100", "scale-100");
+            layerWoman?.classList.add("opacity-0", "scale-95", "pointer-events-none");
+
+            layerVideo?.classList.remove("opacity-0", "scale-95", "pointer-events-none");
+            layerVideo?.classList.add("opacity-100", "scale-100");
+            
+            console.log("▶️ Video en reproducción: Transición pausada permanentemente.");
+          }
+        }
+      }
+    });
+  };
+
+  // Arrancar el ciclo de animación al cargar la página
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startLayoutTransition);
+  } else {
+    startLayoutTransition();
+  }
+</script>
