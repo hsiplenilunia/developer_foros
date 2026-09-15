@@ -36,7 +36,7 @@ const headerInitialClasses = `
 
   <nav class="hidden ml-6 flex-grow xl:block sm:hidden text-white">
     <ul class="flex justify-end text-base gap-4 font-bold uppercase">
-      {
+         <!-- {
         menu.map((item) => (
           <li
             class={`relative text-[0.9em] flex justify-center items-center ${item.className || ""}`}
@@ -89,7 +89,7 @@ const headerInitialClasses = `
           </li>
         ))
       }
-    </ul>
+    </ul>-->
   </nav>
 
   <nav class="flex flex-grow justify-end basis-0 text-white">
@@ -98,11 +98,11 @@ const headerInitialClasses = `
       aria-label="Abrir menú"
       class="ml-4 font-semibold xl:hidden z-50"
     >
-      <HamburguerIcon />
+        <!--<HamburguerIcon />-->
     </button>
   </nav>
 
-  <MobileMenu />
+  <!-- <MobileMenu />
 
   <div
     id="menu-backdrop"
@@ -113,8 +113,8 @@ const headerInitialClasses = `
     w-[var(--width)] h-[var(--height)]
     transition-all duration-300 ease-in-out opacity-0 invisible -z-10
   `}
-  >
-  </div>
+  >-->
+  </div> 
 </header>
 
 <script>
